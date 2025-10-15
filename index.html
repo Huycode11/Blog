@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VanHuy - Developer Portfolio</title>
+
+    <!-- CSS chính -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- CSS cho menu -->
+    <link rel="stylesheet" href="assets/css/menu.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header + Menu -->
+    <nav class="navbar">
+  <div class="logo">VĂN HUY</div>
+
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <ul id="menu">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="social-icons">
+    <a href="https://www.facebook.com/van.huy.737796" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+  </div>
+</nav>
+    <!-- Carousel Container -->
+    <div class="carousel-container" id="home">
+        <div class="carousel">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <div class="slide-content">
+                    <h1>MÌNH LÀ <span class="developer">DEVELOPER</span></h1>
+                    <p>Chế Tạo Website Chất Lượng Cao</p>
+                    <div class="btn-group">
+                        <a href="#" class="btn primary">Hire Me</a>
+                        <a href="#" class="btn">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="slide-content">
+                    <h1>CHÀO MỌI NGƯỜI, MÌNH LÀ <span class="developer">VĂN HUY</span></h1>
+                    <p>Là người đam mê công nghệ và sáng tạo, tôi luôn khao khát được học hỏi, thử nghiệm và chinh phục những điều chưa biết. Với tôi, mỗi thử thách là một cơ hội để trưởng thành, mỗi ý tưởng là một khởi đầu cho sự thay đổi.</p>
+                    <div class="btn-group">
+                        <a href="#" class="btn primary">Hire Me</a>
+                        <a href="#" class="btn">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <div class="slide-content">
+                    <h1>PROFESSIONAL <span class="developer">CODER</span></h1>
+                    <p>Xây Dựng Ứng Dụng Web Chuyên Nghiệp</p>
+                    <div class="btn-group">
+                        <a href="#" class="btn primary">Hire Me</a>
+                        <a href="#" class="btn">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="nav-arrow prev" onclick="changeSlide(-1)">❮</button>
+        <button class="nav-arrow next" onclick="changeSlide(1)">❯</button>
+
+        <!-- Dots Navigation -->
+        <div class="dots-nav">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+    <!-- About Me Section -->
+    <section class="about-me" id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="assets/img/vh.jpg" alt="PHẠM VĂN HUY" style="max-width: 300px; height: auto; border: 2px solid red; display: block;">
+            </div>
+            <div class="about-text">
+                <h3>HI, TÔI LÀ PHẠM VĂN HUY</h3>
+                <p>Một lập trình viên website đam mê công nghệ và sáng tạo. Tôi luôn học hỏi để nâng cao kỹ năng và phát triển bản thân.</p>
+                <p>Tools: C#, Spring Boot, Spring Security, Bootstrap, ...</p>
+                <p><strong>Name:</strong> Phạm Văn Huy</p>
+                <p><strong>Phone:</strong> 0783754204</p>
+                <p><strong>Address:</strong> Thủ Đức, TP.HCM, Vietnam</p>
+                <p><strong>Email:</strong> phamvanhuyhuy2020@gmail.com</p>
+                <p><strong>Website:</strong> <a href="http://mywebsite.com">mywebsite.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JS chính -->
+    <script src="assets/js/script.js"></script>
+    <!-- JS cho menu -->
+    <script src="assets/js/menu.js"></script>
+</body>
+</html>

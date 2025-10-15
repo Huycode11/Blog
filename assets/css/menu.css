@@ -1,0 +1,97 @@
+/* ==== NAVBAR CHUNG ==== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Logo */
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+/* ==== MENU CHÍNH ==== */
+#menu {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+#menu li a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* ==== ICON MẠNG XÃ HỘI ==== */
+.social-icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.social-icons a {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #111;
+  border-radius: 5px;
+  color: #111;
+  transition: all 0.3s;
+}
+
+.social-icons a:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* ==== ICON 3 GẠCH (HAMBURGER) ==== */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: #0dbac3;
+  cursor: pointer;
+}
+
+/* ==== RESPONSIVE CHO MOBILE ==== */
+@media (max-width: 768px) {
+  /* Ẩn menu mặc định */
+  #menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(255,255,255,0.95);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 220px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  /* Khi menu được bật (JS thêm class .show) */
+  #menu.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Ẩn social icons khi ở mobile */
+  .social-icons {
+    display: none;
+  }
+}
