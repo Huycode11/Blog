@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Basics: Getting Started - Văn Huy</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/menu.css">
+  <link rel="stylesheet" href="assets/css/post1.css"> <!-- CSS mới -->
+
+  <!-- MathJax -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">VĂN HUY</div>
+    <ul class="menu">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="index.html#about">ABOUT</a></li>
+      <li><a href="resume.html">RÉSUMÉ</a></li>
+      <li><a href="post.html">POSTS</a></li>
+      <li><a href="index.html#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- Post Content -->
+  <section class="post-container">
+    <img src="assets/img/logo1.png" alt="Java Logo">
+    <h1>Java Basics: Getting Started</h1>
+    <p><strong>Ngày đăng:</strong> Oct 17, 2025</p>
+
+    <p>Java là một trong những ngôn ngữ lập trình phổ biến nhất trên thế giới. 
+    Nó được thiết kế với triết lý “Write Once, Run Anywhere” — tức là bạn chỉ cần viết chương trình một lần và có thể chạy trên bất kỳ nền tảng nào có cài đặt Java Virtual Machine (JVM).</p>
+
+    <h3>1️⃣ Cài đặt môi trường</h3>
+    <p>Trước khi bắt đầu, bạn cần cài đặt:</p>
+    <ul>
+      <li>JDK (Java Development Kit) — để biên dịch và chạy chương trình Java.</li>
+      <li>Một IDE như VS Code, IntelliJ IDEA hoặc Eclipse.</li>
+    </ul>
+
+    <h3>2️⃣ Viết chương trình đầu tiên</h3>
+    <p>Sau khi cài đặt xong, hãy tạo một file tên <code>HelloWorld.java</code> và nhập đoạn mã sau:</p>
+
+    <pre><code>public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello, World!");
+  }
+}</code></pre>
+
+    <p>Chạy chương trình, bạn sẽ thấy kết quả:</p>
+    <pre><code>Hello, World!</code></pre>
+
+    <h3>3️⃣ Giải thích mã</h3>
+    <ul>
+      <li><code>public class HelloWorld</code>: Định nghĩa một lớp tên là <code>HelloWorld</code>.</li>
+      <li><code>public static void main(String[] args)</code>: Là điểm bắt đầu của chương trình Java.</li>
+      <li><code>System.out.println()</code>: Dùng để in ra màn hình.</li>
+    </ul>
+
+    <h3>4️⃣ Kết luận</h3>
+    <p>Qua bài viết này, bạn đã biết cách cài đặt môi trường và viết chương trình Java đầu tiên. 
+    Bước tiếp theo, bạn có thể tìm hiểu về biến, kiểu dữ liệu, và các cấu trúc điều khiển trong Java.</p>
+
+    <a href="post.html" class="back-btn">← Quay lại danh sách bài viết</a>
+  </section>
+
+  <!-- Footer -->
+  <section id="contact" class="contact-me" style="background-color: #1a1a1a; color: #fff; text-align: center; padding: 40px 20px;">
+    <p>Cảm ơn bạn đã đọc bài viết 💙</p>
+    <p>Kết nối với tôi tại 
+      <a href="https://www.facebook.com/van.huy.737796" target="_blank" style="color: #00bcd4;">Facebook</a>
+      hoặc 
+      <a href="mailto:phamvanhuyhuy2020@gmail.com" style="color: #00bcd4;">Email</a>.
+    </p>
+  </section>
+
+  <script src="assets/js/menu.js"></script>
+</body>
+</html>

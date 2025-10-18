@@ -1,0 +1,89 @@
+.post-container {
+  max-width: 980px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 45px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.post-container img {
+  display: block;
+  margin: 0 auto 25px;
+  width: 170px;
+}
+
+.post-container h1 {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.post-container p {
+  text-align: justify;
+  line-height: 1.8;
+  color: #444;
+}
+
+.post-container h3 {
+  margin-top: 25px;
+  color: #222;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f7f7f7;
+}
+
+pre {
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 15px;
+}
+
+code {
+  color: #c7254e;
+  background-color: #f9f2f4;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 35px;
+  padding: 12px 24px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #0056b3;
+}
+
+/* Hiệu ứng mượt mà */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

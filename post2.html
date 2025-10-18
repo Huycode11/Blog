@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Basics: Biến và Kiểu Dữ Liệu - Văn Huy</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/menu.css">
+  <link rel="stylesheet" href="assets/css/post2.css">
+
+  <!-- MathJax -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">VĂN HUY</div>
+    <ul class="menu">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="index.html#about">ABOUT</a></li>
+      <li><a href="resume.html">RÉSUMÉ</a></li>
+      <li><a href="post.html">POSTS</a></li>
+      <li><a href="index.html#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- Post Content -->
+  <section class="post-container">
+    <img src="assets/img/logo2.png" alt="Java Logo">
+    <h1>Java Basics: Biến và Kiểu Dữ Liệu</h1>
+    <p><strong>Ngày đăng:</strong> Oct 18, 2025</p>
+
+    <p>Sau khi bạn đã biết cách chạy chương trình “Hello, World!” trong Java, bước tiếp theo chính là học cách **lưu trữ và xử lý dữ liệu**.  
+    Trong bài viết này, chúng ta sẽ tìm hiểu khái niệm **biến (variables)**, **kiểu dữ liệu (data types)**, và cách Java quản lý bộ nhớ cho từng loại.</p>
+
+    <h3>1️⃣ Biến là gì?</h3>
+    <p>Biến là một vùng nhớ trong RAM dùng để lưu trữ giá trị trong quá trình chương trình chạy.  
+    Bạn có thể hình dung biến giống như một chiếc hộp có tên — nơi bạn cất một giá trị cụ thể.</p>
+
+    <pre><code>int age = 20;
+double height = 1.75;
+String name = "Văn Huy";</code></pre>
+
+    <p>Mỗi biến có 3 yếu tố cơ bản:</p>
+    <ul>
+      <li><strong>Kiểu dữ liệu</strong>: Xác định dạng giá trị mà biến lưu trữ (số, chữ, logic,...).</li>
+      <li><strong>Tên biến</strong>: Tên do bạn đặt để truy cập.</li>
+      <li><strong>Giá trị</strong>: Dữ liệu thực tế mà biến đang giữ.</li>
+    </ul>
+
+    <h3>2️⃣ Các kiểu dữ liệu cơ bản trong Java</h3>
+    <p>Java chia kiểu dữ liệu thành 2 nhóm chính:</p>
+
+    <h4>a. Kiểu dữ liệu nguyên thủy (Primitive Types)</h4>
+    <ul>
+      <li><code>byte</code> — 8-bit, giá trị từ -128 đến 127</li>
+      <li><code>short</code> — 16-bit, giá trị từ -32,768 đến 32,767</li>
+      <li><code>int</code> — 32-bit, thường dùng nhất để lưu số nguyên</li>
+      <li><code>long</code> — 64-bit, dùng cho số lớn</li>
+      <li><code>float</code> — 32-bit, số thực dấu chấm động</li>
+      <li><code>double</code> — 64-bit, độ chính xác cao hơn <code>float</code></li>
+      <li><code>char</code> — 16-bit, lưu một ký tự Unicode</li>
+      <li><code>boolean</code> — chỉ nhận giá trị <code>true</code> hoặc <code>false</code></li>
+    </ul>
+
+    <h4>b. Kiểu dữ liệu tham chiếu (Reference Types)</h4>
+    <p>Đây là các kiểu dữ liệu phức tạp như <code>String</code>, <code>Array</code>, <code>Class</code>, hoặc <code>Object</code>.  
+    Các biến thuộc loại này không lưu trực tiếp giá trị, mà lưu **địa chỉ vùng nhớ** nơi dữ liệu thật sự tồn tại.</p>
+
+    <h3>3️⃣ Quy tắc đặt tên biến</h3>
+    <ul>
+      <li>Không bắt đầu bằng số, ví dụ: ❌ <code>1age</code>.</li>
+      <li>Không chứa ký tự đặc biệt (ngoại trừ dấu gạch dưới <code>_</code>).</li>
+      <li>Phân biệt chữ hoa và chữ thường (<code>age</code> ≠ <code>Age</code>).</li>
+      <li>Theo chuẩn Java, dùng **camelCase**, ví dụ: <code>studentName</code>, <code>totalPrice</code>.</li>
+    </ul>
+
+    <h3>4️⃣ Hằng số trong Java</h3>
+    <p>Nếu bạn có giá trị không muốn thay đổi trong suốt chương trình, hãy dùng **hằng số** với từ khóa <code>final</code>:</p>
+
+    <pre><code>final double PI = 3.14159;
+final int MAX_USERS = 100;</code></pre>
+
+    <p>Nếu bạn cố gắng gán lại giá trị cho hằng, chương trình sẽ báo lỗi khi biên dịch.</p>
+
+    <h3>5️⃣ Ví dụ tổng hợp</h3>
+    <pre><code>public class VariableExample {
+  public static void main(String[] args) {
+    int age = 21;
+    double salary = 850.5;
+    final double TAX_RATE = 0.1;
+    
+    double netSalary = salary - (salary * TAX_RATE);
+    
+    System.out.println("Tuổi: " + age);
+    System.out.println("Lương thực nhận: " + netSalary);
+  }
+}</code></pre>
+
+    <p>Kết quả in ra:</p>
+    <pre><code>Tuổi: 21
+Lương thực nhận: 765.45</code></pre>
+
+    <h3>6️⃣ Kết luận</h3>
+    <p>Hiểu rõ về biến và kiểu dữ liệu là bước nền tảng quan trọng để bạn làm chủ Java.  
+    Ở bài tiếp theo, chúng ta sẽ khám phá **toán tử (operators)** và cách Java thực hiện tính toán logic, số học, so sánh, v.v.</p>
+
+    <a href="post.html" class="back-btn">← Quay lại danh sách bài viết</a>
+  </section>
+
+  <!-- Footer -->
+  <section id="contact" class="contact-me" style="background-color: #1a1a1a; color: #fff; text-align: center; padding: 40px 20px;">
+    <p>Cảm ơn bạn đã đọc bài viết 💙</p>
+    <p>Kết nối với tôi tại 
+      <a href="https://www.facebook.com/van.huy.737796" target="_blank" style="color: #00bcd4;">Facebook</a>
+      hoặc 
+      <a href="mailto:phamvanhuyhuy2020@gmail.com" style="color: #00bcd4;">Email</a>.
+    </p>
+  </section>
+
+  <script src="assets/js/menu.js"></script>
+</body>
+</html>

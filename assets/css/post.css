@@ -1,0 +1,7 @@
+.recent-posts {
+  padding-top: 100px; /* Tăng khoảng cách trên để tránh dính với navbar */
+}
+
+.recent-posts h2 {
+  margin-bottom: 20px; /* Giữ khoảng cách dưới tiêu đề */
+}

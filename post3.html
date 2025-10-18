@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Basics: Toán tử và Biểu thức - Văn Huy</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/menu.css">
+  <link rel="stylesheet" href="assets/css/post3.css">
+
+  <!-- MathJax -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">VĂN HUY</div>
+    <ul class="menu">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="index.html#about">ABOUT</a></li>
+      <li><a href="resume.html">RÉSUMÉ</a></li>
+      <li><a href="post.html">POSTS</a></li>
+      <li><a href="index.html#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- Post Content -->
+  <section class="post-container">
+    <img src="assets/img/logo3.png" alt="Java Operators">
+    <h1>Java Basics: Toán tử và Biểu thức</h1>
+    <p><strong>Ngày đăng:</strong> Oct 19, 2025</p>
+
+    <p>Trong lập trình, **toán tử (operators)** và **biểu thức (expressions)** là hai khái niệm cực kỳ quan trọng.  
+    Chúng giúp chương trình của bạn có thể **thực hiện tính toán, so sánh và xử lý logic**.  
+    Trong Java, toán tử được chia thành nhiều nhóm khác nhau, mỗi nhóm có mục đích sử dụng riêng.</p>
+
+    <h3>1️⃣ Toán tử số học (Arithmetic Operators)</h3>
+    <p>Dùng để thực hiện các phép tính toán học cơ bản:</p>
+
+    <table>
+      <tr><th>Toán tử</th><th>Ý nghĩa</th><th>Ví dụ</th></tr>
+      <tr><td>+</td><td>Cộng</td><td><code>a + b</code></td></tr>
+      <tr><td>-</td><td>Trừ</td><td><code>a - b</code></td></tr>
+      <tr><td>*</td><td>Nhân</td><td><code>a * b</code></td></tr>
+      <tr><td>/</td><td>Chia</td><td><code>a / b</code></td></tr>
+      <tr><td>%</td><td>Lấy phần dư</td><td><code>a % b</code></td></tr>
+    </table>
+
+    <pre><code>int a = 10, b = 3;
+System.out.println(a / b);  // 3
+System.out.println(a % b);  // 1</code></pre>
+
+    <h3>2️⃣ Toán tử gán (Assignment Operators)</h3>
+    <p>Toán tử gán được dùng để **gán giá trị cho biến**.  
+    Ngoài <code>=</code>, còn có các toán tử kết hợp khác giúp viết ngắn gọn hơn:</p>
+
+    <pre><code>int x = 5;
+x += 3;  // tương đương x = x + 3;
+x *= 2;  // tương đương x = x * 2;</code></pre>
+
+    <p>Sau các phép trên, giá trị của <code>x</code> sẽ là <code>16</code>.</p>
+
+    <h3>3️⃣ Toán tử quan hệ (Relational Operators)</h3>
+    <p>Dùng để **so sánh hai giá trị**.  
+    Kết quả của phép so sánh luôn là <code>true</code> hoặc <code>false</code>.</p>
+
+    <table>
+      <tr><th>Toán tử</th><th>Ý nghĩa</th><th>Ví dụ</th></tr>
+      <tr><td>==</td><td>Bằng</td><td><code>a == b</code></td></tr>
+      <tr><td>!=</td><td>Khác</td><td><code>a != b</code></td></tr>
+      <tr><td>&gt;</td><td>Lớn hơn</td><td><code>a > b</code></td></tr>
+      <tr><td>&lt;</td><td>Nhỏ hơn</td><td><code>a < b</code></td></tr>
+      <tr><td>&gt;=</td><td>Lớn hơn hoặc bằng</td><td><code>a >= b</code></td></tr>
+      <tr><td>&lt;=</td><td>Nhỏ hơn hoặc bằng</td><td><code>a <= b</code></td></tr>
+    </table>
+
+    <h3>4️⃣ Toán tử logic (Logical Operators)</h3>
+    <p>Dùng để **kết hợp nhiều điều kiện**:</p>
+
+    <table>
+      <tr><th>Toán tử</th><th>Ý nghĩa</th><th>Ví dụ</th></tr>
+      <tr><td>&&</td><td>Và (AND)</td><td><code>a > 0 && b > 0</code></td></tr>
+      <tr><td>||</td><td>Hoặc (OR)</td><td><code>a > 0 || b > 0</code></td></tr>
+      <tr><td>!</td><td>Phủ định (NOT)</td><td><code>!(a > b)</code></td></tr>
+    </table>
+
+    <h3>5️⃣ Toán tử tăng giảm (Increment/Decrement)</h3>
+    <p>Dùng để **tăng hoặc giảm giá trị của biến** lên 1 đơn vị:</p>
+
+    <pre><code>int i = 5;
+i++;  // tăng i lên 1 => i = 6
+i--;  // giảm i đi 1 => i = 5
+
+// Có 2 dạng: ++i (tiền tố) và i++ (hậu tố)
+int a = 5;
+System.out.println(++a);  // In ra 6 (tăng trước)
+System.out.println(a++);  // In ra 6 (tăng sau)</code></pre>
+
+    <h3>6️⃣ Toán tử điều kiện (Ternary Operator)</h3>
+    <p>Đây là dạng viết tắt của câu lệnh <code>if-else</code>, rất phổ biến:</p>
+
+    <pre><code>int age = 18;
+String result = (age >= 18) ? "Đủ tuổi" : "Chưa đủ tuổi";
+System.out.println(result); // Đủ tuổi</code></pre>
+
+    <h3>7️⃣ Biểu thức (Expressions)</h3>
+    <p>**Biểu thức** là sự kết hợp giữa toán tử và toán hạng để tạo ra một giá trị mới.</p>
+    <pre><code>int sum = a + b * c;   // đây là một biểu thức
+boolean check = (a > b) && (b > c);</code></pre>
+
+    <p>Thứ tự ưu tiên của toán tử trong Java tuân theo quy tắc sau:</p>
+    <ul>
+      <li>Nhân, chia, chia dư → trước cộng, trừ</li>
+      <li>So sánh → trước logic</li>
+      <li>Có thể dùng dấu ngoặc <code>()</code> để thay đổi thứ tự thực hiện</li>
+    </ul>
+
+    <h3>8️⃣ Ví dụ tổng hợp</h3>
+    <pre><code>public class OperatorExample {
+  public static void main(String[] args) {
+    int a = 10, b = 5;
+    int result = a * b + 10 / 2;
+    boolean check = (a > b) && (result > 20);
+
+    System.out.println("Kết quả phép tính: " + result);
+    System.out.println("Điều kiện đúng không? " + check);
+  }
+}</code></pre>
+
+    <pre><code>Kết quả phép tính: 55
+Điều kiện đúng không? true</code></pre>
+
+    <h3>9️⃣ Kết luận</h3>
+    <p>Hiểu rõ cách hoạt động của các toán tử giúp bạn tránh được lỗi logic trong chương trình.  
+    Ở bài tiếp theo, chúng ta sẽ đi sâu vào **cấu trúc điều khiển (if, switch, loop)** – những yếu tố tạo nên “dòng chảy” của chương trình Java.</p>
+
+    <a href="post.html" class="back-btn">← Quay lại danh sách bài viết</a>
+  </section>
+
+  <!-- Footer -->
+  <section id="contact" class="contact-me" style="background-color: #1a1a1a; color: #fff; text-align: center; padding: 40px 20px;">
+    <p>Cảm ơn bạn đã đọc bài viết 💙</p>
+    <p>Kết nối với tôi tại 
+      <a href="https://www.facebook.com/van.huy.737796" target="_blank" style="color: #00bcd4;">Facebook</a>
+      hoặc 
+      <a href="mailto:phamvanhuyhuy2020@gmail.com" style="color: #00bcd4;">Email</a>.
+    </p>
+  </section>
+
+  <script src="assets/js/menu.js"></script>
+</body>
+</html>
