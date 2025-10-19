@@ -21,6 +21,22 @@
     html {
       scroll-behavior: smooth;
     }
+    .divider {
+      margin: 60px auto;
+      width: 80%;
+      border-top: 3px dashed #999;
+      text-align: center;
+      position: relative;
+    }
+    .divider span {
+      background: #f0f2f5;
+      position: relative;
+      top: -14px;
+      padding: 0 15px;
+      font-weight: bold;
+      color: #333;
+      font-size: 20px;
+    }
   </style>
 </head>
 
@@ -44,41 +60,109 @@
   </nav>
 
   <!-- Recent Posts Section -->
-<!-- Recent Posts Section -->
-<section class="recent-posts" id="post" style="background-color: #f0f2f5; padding: 20px; text-align: center;">
-  <h2>..................</h2>
-  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-    
-    <!-- Post 1 -->
-    <div style="background: #fff; border-radius: 10px; padding: 20px; width: 300px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <img src="assets/img/logo1.png" alt="Java Logo" style="width: 100px; margin-bottom: 10px;">
-      <h3>Java Basics: Getting Started</h3>
-      <p><strong>Java Programming</strong><br>Learn the fundamentals of Java, including setting up your environment, writing your first program, and understanding basic syntax. Start with <code>public class HelloWorld { public static void main(String[] args) { System.out.println("Hello, World!"); } }</code> to print a simple message.</p>
-      <p style="color: #888;">Oct 17, 2025</p>
-      <button onclick="window.location.href='post1.html'" style="background-color: #007bff; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Read</button>
+  <section class="recent-posts" id="post" style="background-color: #f0f2f5; padding: 40px 20px; text-align: center;">
+    <h2 style="margin-bottom: 30px;">Recent Posts</h2>
+
+    <!-- ========== JAVA POSTS ========== -->
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+      <!-- Post 1 -->
+      <div style="background: #fff; border-radius: 10px; padding: 20px; width: 300px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+        <img src="assets/img/logo1.png" alt="Java Logo" style="width: 100px; margin-bottom: 15px;">
+        <h3>Java Basics: Getting Started</h3>
+        <p><strong>Java Programming</strong><br>Learn the fundamentals of Java, including setting up your environment, writing your first program, and understanding basic syntax.</p>
+        <p style="color: #888;">Oct 17, 2025</p>
+        <button onclick="window.location.href='post/post1.html'" class="read-btn">Read</button>
+      </div>
+
+      <!-- Post 2 -->
+      <div style="background: #fff; border-radius: 10px; padding: 20px; width: 300px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+        <img src="assets/img/logo2.png" alt="OOP Logo" style="width: 100px; margin-bottom: 15px;">
+        <h3>Java Object-Oriented Programming</h3>
+        <p><strong>OOP in Java</strong><br>Explore Java's object-oriented features like classes, objects, inheritance, and polymorphism through practical examples.</p>
+        <p style="color: #888;">Oct 10, 2025</p>
+        <button onclick="window.location.href='post/post2.html'" class="read-btn">Read</button>
+      </div>
+
+      <!-- Post 3 -->
+      <div style="background: #fff; border-radius: 10px; padding: 20px; width: 300px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+        <img src="assets/img/logo3.png" alt="Collections Logo" style="width: 100px; margin-bottom: 15px;">
+        <h3>Java Collections Framework</h3>
+        <p><strong>Java Collections</strong><br>Understand Java's Collections Framework for managing data efficiently using Lists, Sets, and Maps.</p>
+        <p style="color: #888;">Oct 5, 2025</p>
+        <button onclick="window.location.href='post/post3.html'" class="read-btn">Read</button>
+      </div>
+
+      <!-- Post 4 -->
+      <div style="background: #fff; border-radius: 10px; padding: 20px; width: 300px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+        <img src="assets/img/logo4.png" alt="Java Exception Logo" style="width: 100px; margin-bottom: 15px;">
+        <h3>Java Exception Handling</h3>
+        <p><strong>Exception & Error</strong><br>Learn how Java handles runtime errors using try-catch blocks, custom exceptions, and best practices for robust applications.</p>
+        <p style="color: #888;">Oct 12, 2025</p>
+        <button onclick="window.location.href='post/post4.html'" class="read-btn">Read</button>
+      </div>
+
+      <!-- Post 5 -->
+      <div style="background: #fff; border-radius: 10px; padding: 20px; width: 300px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+        <img src="assets/img/logo5.png" alt="Java Thread Logo" style="width: 100px; margin-bottom: 15px;">
+        <h3>Java Multithreading</h3>
+        <p><strong>Concurrency</strong><br>Understand how to create and manage multiple threads in Java, improve performance, and avoid concurrency issues.</p>
+        <p style="color: #888;">Oct 14, 2025</p>
+        <button onclick="window.location.href='post/post5.html'" class="read-btn">Read</button>
+      </div>
+
+      <!-- Post 6 -->
+      <div style="background: #fff; border-radius: 10px; padding: 20px; width: 300px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+        <img src="assets/img/logo6.png" alt="Java Stream API" style="width: 100px; margin-bottom: 15px;">
+        <h3>Java Stream API</h3>
+        <p><strong>Functional Programming</strong><br>Master the Java Stream API for processing collections with map, filter, and reduce operations in a clean, functional way.</p>
+        <p style="color: #888;">Oct 18, 2025</p>
+        <button onclick="window.location.href='post/post6.html'" class="read-btn">Read</button>
+      </div>
     </div>
 
-    <!-- Post 2 -->
-    <div style="background: #fff; border-radius: 10px; padding: 20px; width: 300px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <img src="assets/img/logo2.png" alt="Java Logo" style="width: 100px; margin-bottom: 10px;">
-      <h3>Java Object-Oriented Programming</h3>
-      <p><strong>OOP in Java</strong><br>Explore Java's object-oriented features like classes, objects, inheritance, and polymorphism. Example: <code>class Car { String model; void drive() { System.out.println("Driving " + model); } }</code> demonstrates creating a simple class.</p>
-      <p style="color: #888;">Oct 10, 2025</p>
-      <button onclick="window.location.href='post2.html'" style="background-color: #007bff; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Read</button>
+    <!-- Divider -->
+    <div class="divider"><span>------ JavaScript ------</span></div>
+
+    <!-- ========== JAVASCRIPT POSTS ========== -->
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+
+      <!-- Post 7 -->
+      <div style="background:#fff;border-radius:10px;padding:20px;width:300px;box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+        <img src="assets/img/logo7.png" alt="JavaScript Basics" style="width:100px;margin-bottom:15px;">
+        <h3>JavaScript Basics: Getting Started</h3>
+        <p><strong>Web Programming</strong><br>Learn variables, operators, and DOM basics in JavaScript to start creating interactive web pages.</p>
+        <p style="color:#888;">Oct 19, 2025</p>
+        <button onclick="window.location.href='post/post7.html'" class="read-btn">Read</button>
+      </div>
+
+      <!-- Post 8 -->
+      <div style="background:#fff;border-radius:10px;padding:20px;width:300px;box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+        <img src="assets/img/logo8.png" alt="JS Functions" style="width:100px;margin-bottom:15px;">
+        <h3>Functions and Scope in JavaScript</h3>
+        <p><strong>JS Logic</strong><br>Understand how functions, scope, and closures work to write modular and reusable code.</p>
+        <p style="color:#888;">Oct 20, 2025</p>
+        <button onclick="window.location.href='post/post8.html'" class="read-btn">Read</button>
+      </div>
+
+      <!-- Post 9 -->
+      <div style="background:#fff;border-radius:10px;padding:20px;width:300px;box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+        <img src="assets/img/logo9.png" alt="DOM Manipulation" style="width:100px;margin-bottom:15px;">
+        <h3>DOM Manipulation with JavaScript</h3>
+        <p><strong>Frontend</strong><br>Learn how to dynamically change HTML and CSS elements using JavaScript to make your website interactive.</p>
+        <p style="color:#888;">Oct 21, 2025</p>
+        <button onclick="window.location.href='post/post9.html'" class="read-btn">Read</button>
+      </div>
+
+      <!-- Post 10 -->
+      <div style="background:#fff;border-radius:10px;padding:20px;width:300px;box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+        <img src="assets/img/logo10.png" alt="ES6 Features" style="width:100px;margin-bottom:15px;">
+        <h3>Modern JavaScript: ES6 Features</h3>
+        <p><strong>ES6+</strong><br>Discover new JavaScript features like arrow functions, promises, and modules that simplify development.</p>
+        <p style="color:#888;">Oct 22, 2025</p>
+        <button onclick="window.location.href='post/post10.html'" class="read-btn">Read</button>
+      </div>
     </div>
-
-    <!-- Post 3 -->
-    <div style="background: #fff; border-radius: 10px; padding: 20px; width: 300px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <img src="assets/img/logo3.png" alt="Java Logo" style="width: 100px; margin-bottom: 10px;">
-      <h3>Java Collections Framework</h3>
-      <p><strong>Java Collections</strong><br>Understand Java's Collections Framework for managing data. Use <code>ArrayList</code> for dynamic arrays: <code>List&lt;String&gt; list = new ArrayList&lt;&gt;(); list.add("Item");</code>. Learn about Lists, Sets, and Maps for efficient data handling.</p>
-      <p style="color: #888;">Oct 5, 2025</p>
-      <button onclick="window.location.href='post3.html'" style="background-color: #007bff; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Read</button>
-    </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- Contact Section -->
   <section id="contact" class="contact-me" style="background-color: #1a1a1a; color: #fff; text-align: center; padding: 50px 20px;">
@@ -87,34 +171,18 @@
       <p>Contact Me For More Details</p>
       <p><i class="fas fa-phone"></i> +84783754204 (ZALO)</p>
       <p><i class="fas fa-envelope"></i> phamvanhuyhuy2020@gmail.com</p>
-      <p><i class="fas fa-map-marker-alt"></i> THUDUC, TPHCM, Vietnam</p>
-      <p><i class="fab fa-facebook-f"></i> 
-        <a href="https://www.facebook.com/van.huy.737796" style="color: #00bcd4; text-decoration: none;" target="_blank">
-          https://www.facebook.com/van.huy.737796
-        </a>
-      </p>
-      <p><i class="fab fa-linkedin"></i> 
-        <a href="https://www.linkedin.com/in/VANHUY" style="color: #00bcd4; text-decoration: none;" target="_blank">
-          https://www.linkedin.com/in/VANHUY
+      <p><i class="fas fa-map-marker-alt"></i> THỦ ĐỨC, TPHCM, Vietnam</p>
+      <p><i class="fab fa-facebook-f"></i>
+        <a href="https://www.facebook.com/van.huy.737796" style="color:#00bcd4;text-decoration:none;" target="_blank">
+          facebook.com/van.huy.737796
         </a>
       </p>
     </div>
 
     <p style="margin-top: 30px;">Thanks for visiting my site</p>
-    <div style="margin-top: 20px;">
-      <button 
-        style="background-color: #00bcd4; color: #fff; border: none; padding: 10px 20px; border-radius: 50%; cursor: pointer;"
-        onclick="window.location.href='index.html#contact'">
-      </button>
-      <span style="margin-left: 10px;">
-        Connect with me: 
-        <a href="https://www.facebook.com/van.huy.737796" style="color: #00bcd4;"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://twitter.com/yourprofile" style="color: #00bcd4;"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.linkedin.com/in/VANHUY" style="color: #00bcd4;"><i class="fab fa-linkedin"></i></a>
-      </span>
-    </div>
   </section>
 
+  <!-- JS -->
   <script src="assets/js/script.js"></script>
   <script src="assets/js/menu.js"></script>
 </body>

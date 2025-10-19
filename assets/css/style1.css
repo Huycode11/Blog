@@ -124,3 +124,18 @@
   border-color: #14b8a6;
   transform: scale(1.1);
 }
+/* === Nút "Read" trong phần bài viết === */
+.read-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.read-btn:hover {
+  background-color: #0056b3;
+}
+

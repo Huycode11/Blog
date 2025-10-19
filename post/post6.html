@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java File I/O - Văn Huy</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/post6.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <header class="header">
+    <button class="back-btn" onclick="window.location.href='../post.html'">
+      <i class="fa-solid fa-arrow-left"></i> Quay lại danh sách bài viết
+    </button>
+    <h1>Java File I/O – Đọc và ghi tệp trong Java</h1>
+    <p class="subtitle">Tác giả: Văn Huy | Ngày đăng: 21/10/2025</p>
+  </header>
+
+  <section class="content">
+    <h2>1. Giới thiệu</h2>
+    <p>
+      Trong lập trình Java, **File I/O (Input/Output)** cho phép chúng ta thao tác với tệp — 
+      bao gồm đọc dữ liệu từ tệp, ghi dữ liệu vào tệp, và xử lý lỗi trong quá trình truy cập tệp.
+      Đây là một phần quan trọng giúp chương trình có thể lưu trữ dữ liệu bền vững.
+    </p>
+
+    <h2>2. Các lớp quan trọng trong Java I/O</h2>
+    <p>Java cung cấp nhiều lớp để xử lý tệp trong gói <code>java.io</code>:</p>
+    <ul>
+      <li><code>File</code> – đại diện cho đường dẫn tệp hoặc thư mục.</li>
+      <li><code>FileReader</code>, <code>FileWriter</code> – đọc/ghi ký tự.</li>
+      <li><code>BufferedReader</code>, <code>BufferedWriter</code> – đọc/ghi hiệu quả hơn.</li>
+      <li><code>FileInputStream</code>, <code>FileOutputStream</code> – đọc/ghi byte (nhị phân).</li>
+    </ul>
+
+    <h2>3. Tạo và kiểm tra tệp</h2>
+    <pre><code class="language-java">
+import java.io.File;
+import java.io.IOException;
+
+public class CreateFileExample {
+    public static void main(String[] args) {
+        File file = new File("example.txt");
+        try {
+            if (file.createNewFile()) {
+                System.out.println("Tệp đã được tạo: " + file.getName());
+            } else {
+                System.out.println("Tệp đã tồn tại.");
+            }
+        } catch (IOException e) {
+            System.out.println("Lỗi khi tạo tệp.");
+            e.printStackTrace();
+        }
+    }
+}
+    </code></pre>
+
+    <h2>4. Ghi dữ liệu vào tệp</h2>
+    <pre><code class="language-java">
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class WriteFileExample {
+    public static void main(String[] args) {
+        try {
+            FileWriter writer = new FileWriter("example.txt");
+            writer.write("Xin chào, đây là nội dung được ghi bằng Java!");
+            writer.close();
+            System.out.println("Ghi dữ liệu thành công.");
+        } catch (IOException e) {
+            System.out.println("Đã xảy ra lỗi khi ghi tệp.");
+            e.printStackTrace();
+        }
+    }
+}
+    </code></pre>
+
+    <h2>5. Đọc dữ liệu từ tệp</h2>
+    <pre><code class="language-java">
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class ReadFileExample {
+    public static void main(String[] args) {
+        try {
+            File file = new File("example.txt");
+            Scanner reader = new Scanner(file);
+            while (reader.hasNextLine()) {
+                String data = reader.nextLine();
+                System.out.println(data);
+            }
+            reader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Không tìm thấy tệp.");
+            e.printStackTrace();
+        }
+    }
+}
+    </code></pre>
+
+    <h2>6. Đọc/Ghi nhị phân (Binary Stream)</h2>
+    <pre><code class="language-java">
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class BinaryExample {
+    public static void main(String[] args) throws IOException {
+        // Ghi tệp
+        FileOutputStream out = new FileOutputStream("data.bin");
+        out.write(100);
+        out.write(200);
+        out.close();
+
+        // Đọc tệp
+        FileInputStream in = new FileInputStream("data.bin");
+        int value;
+        while ((value = in.read()) != -1) {
+            System.out.println(value);
+        }
+        in.close();
+    }
+}
+    </code></pre>
+
+    <h2>7. Xử lý lỗi trong I/O</h2>
+    <p>
+      Khi thao tác với tệp, ta nên sử dụng **try-catch-finally** hoặc **try-with-resources** 
+      để đảm bảo tệp được đóng đúng cách, tránh rò rỉ tài nguyên.
+    </p>
+
+    <pre><code class="language-java">
+try (FileWriter writer = new FileWriter("example.txt")) {
+    writer.write("Ghi dữ liệu an toàn hơn với try-with-resources!");
+} catch (IOException e) {
+    e.printStackTrace();
+}
+    </code></pre>
+
+    <h2>8. Bảng tóm tắt</h2>
+    <table class="table">
+      <tr><th>Lớp</th><th>Chức năng</th></tr>
+      <tr><td><code>File</code></td><td>Đại diện cho tệp/thư mục trong hệ thống.</td></tr>
+      <tr><td><code>FileReader</code></td><td>Đọc dữ liệu dạng văn bản (text).</td></tr>
+      <tr><td><code>FileWriter</code></td><td>Ghi dữ liệu dạng văn bản.</td></tr>
+      <tr><td><code>BufferedReader</code></td><td>Tăng tốc độ đọc dữ liệu.</td></tr>
+      <tr><td><code>FileInputStream</code></td><td>Đọc dữ liệu nhị phân.</td></tr>
+    </table>
+
+    <h2>9. Kết luận</h2>
+    <p>
+      Kiến thức về File I/O là nền tảng quan trọng trong Java, 
+      giúp bạn xây dựng các ứng dụng lưu trữ và xử lý dữ liệu thực tế.
+      Việc hiểu rõ cách đọc, ghi và xử lý lỗi sẽ giúp chương trình ổn định, an toàn và hiệu quả hơn.
+    </p>
+
+    <button class="top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+      ⬆ Về đầu trang
+    </button>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Văn Huy | <a href="../post.html">Quay lại danh sách bài viết</a></p>
+  </footer>
+</body>
+</html>

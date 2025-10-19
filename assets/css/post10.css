@@ -1,0 +1,123 @@
+/* -----------------------------
+   CSS riêng cho post10 - Function JS
+   Tông sáng - thanh lịch
+------------------------------ */
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f7fb;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+  color: #0078d7;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2em;
+}
+
+h2 {
+  margin-top: 35px;
+  border-left: 4px solid #0078d7;
+  padding-left: 10px;
+}
+
+h3 {
+  color: #ff9800;
+  margin-top: 20px;
+}
+
+p, li {
+  line-height: 1.8;
+  font-size: 1.05em;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Nút quay lại */
+.back-btn {
+  display: inline-block;
+  background-color: #0078d7;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-bottom: 25px;
+  transition: 0.3s;
+}
+.back-btn:hover {
+  background-color: #005fa3;
+}
+
+/* Code Box */
+.code-box {
+  background: #272822;
+  color: #00e676;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 15px 0;
+  overflow-x: auto;
+  border-left: 5px solid #0078d7;
+  font-family: "Consolas", monospace;
+  font-size: 0.95em;
+}
+
+/* Ghi chú */
+.note {
+  background-color: #e7f3ff;
+  border-left: 4px solid #0078d7;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin: 20px 0;
+  color: #333;
+  font-style: italic;
+}
+
+/* Divider */
+.divider {
+  border-bottom: 1px solid #ddd;
+  margin: 30px 0;
+}
+
+/* Footer */
+.footer-text {
+  text-align: center;
+  color: #666;
+  font-size: 0.95em;
+  margin-top: 40px;
+}
+
+/* Animation */
+.container {
+  animation: fadeIn 0.9s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 25px 20px;
+  }
+  h1 {
+    font-size: 1.7em;
+  }
+}

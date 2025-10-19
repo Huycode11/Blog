@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hàm (Function) trong JavaScript - Văn Huy</title>
+
+  <!-- CSS riêng -->
+  <link rel="stylesheet" href="../assets/css/post10.css">
+</head>
+
+<body>
+  <div class="container">
+    <a href="../post.html" class="back-btn">← Quay lại danh sách bài viết</a>
+
+    <h1>Hàm (Function) trong JavaScript</h1>
+    <p>Trong JavaScript, <strong>hàm (function)</strong> là một trong những khối xây dựng quan trọng nhất. Hàm giúp bạn nhóm các đoạn mã thực hiện một nhiệm vụ cụ thể, giúp mã nguồn ngắn gọn, dễ đọc và dễ bảo trì hơn.</p>
+
+    <div class="divider"></div>
+
+    <h2>1. Khái niệm về hàm</h2>
+    <p>Một hàm trong JavaScript là một tập hợp các câu lệnh được định nghĩa một lần và có thể được gọi lại nhiều lần ở bất cứ đâu trong chương trình.</p>
+
+    <div class="code-box">
+      <pre><code>
+// Cú pháp cơ bản
+function tenHam(thamSo1, thamSo2) {
+  // Thân hàm
+  return thamSo1 + thamSo2;
+}
+
+// Gọi hàm
+let tong = tenHam(5, 3);
+console.log(tong); // Kết quả: 8
+      </code></pre>
+    </div>
+
+    <p>Hàm có thể có tham số hoặc không, có thể trả về giá trị hoặc không tuỳ theo nhu cầu sử dụng.</p>
+
+    <div class="divider"></div>
+
+    <h2>2. Các loại hàm trong JavaScript</h2>
+
+    <h3>2.1. Hàm khai báo (Function Declaration)</h3>
+    <p>Đây là loại hàm phổ biến nhất, được định nghĩa bằng từ khóa <code>function</code> và có thể được gọi ở bất cứ đâu (hoisting).</p>
+    <div class="code-box">
+      <pre><code>
+function sayHello() {
+  console.log("Xin chào, tôi là Văn Huy!");
+}
+
+sayHello(); // Gọi hàm
+      </code></pre>
+    </div>
+
+    <h3>2.2. Hàm biểu thức (Function Expression)</h3>
+    <p>Hàm này được gán cho một biến, không thể được gọi trước khi khai báo.</p>
+    <div class="code-box">
+      <pre><code>
+const chao = function() {
+  console.log("Xin chào từ function expression!");
+};
+
+chao();
+      </code></pre>
+    </div>
+
+    <h3>2.3. Hàm mũi tên (Arrow Function)</h3>
+    <p>Hàm mũi tên được giới thiệu trong ES6, cú pháp ngắn gọn và không có <code>this</code> riêng.</p>
+    <div class="code-box">
+      <pre><code>
+const tong = (a, b) => a + b;
+console.log(tong(5, 10)); // 15
+      </code></pre>
+    </div>
+
+    <div class="note">
+      <p><strong>Lưu ý:</strong> Arrow function không thể dùng làm constructor và không có <code>arguments</code> riêng.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2>3. Hàm có tham số mặc định</h2>
+    <p>Từ ES6, bạn có thể đặt giá trị mặc định cho tham số, giúp code linh hoạt và tránh lỗi thiếu tham số.</p>
+    <div class="code-box">
+      <pre><code>
+function greet(name = "Khách") {
+  console.log("Xin chào, " + name + "!");
+}
+
+greet("Huy"); // Xin chào, Huy!
+greet(); // Xin chào, Khách!
+      </code></pre>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2>4. Hàm ẩn danh và callback</h2>
+    <p>Hàm ẩn danh (anonymous function) không có tên, thường được dùng làm callback trong các tình huống như sự kiện hoặc xử lý bất đồng bộ.</p>
+
+    <div class="code-box">
+      <pre><code>
+setTimeout(function() {
+  console.log("Hàm này chạy sau 2 giây");
+}, 2000);
+      </code></pre>
+    </div>
+
+    <h3>Ví dụ callback trong mảng</h3>
+    <div class="code-box">
+      <pre><code>
+let numbers = [1, 2, 3];
+numbers.forEach(function(num) {
+  console.log("Giá trị:", num);
+});
+      </code></pre>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2>5. Hàm lồng nhau và phạm vi (Scope)</h2>
+    <p>Bạn có thể khai báo một hàm bên trong hàm khác. Hàm con chỉ có thể truy cập được trong phạm vi của hàm cha.</p>
+    <div class="code-box">
+      <pre><code>
+function outer() {
+  let outerVar = "Biến bên ngoài";
+
+  function inner() {
+    console.log(outerVar);
+  }
+
+  inner(); // Có thể truy cập outerVar
+}
+
+outer();
+      </code></pre>
+    </div>
+
+    <p>Hiểu rõ phạm vi giúp bạn tránh lỗi biến bị ghi đè hoặc không xác định.</p>
+
+    <div class="divider"></div>
+
+    <h2>6. Hàm đệ quy (Recursive Function)</h2>
+    <p>Hàm có thể tự gọi lại chính nó để giải quyết bài toán lặp có cấu trúc, như tính giai thừa hoặc duyệt cây.</p>
+    <div class="code-box">
+      <pre><code>
+function factorial(n) {
+  if (n === 0) return 1;
+  return n * factorial(n - 1);
+}
+
+console.log(factorial(5)); // Kết quả: 120
+      </code></pre>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2>7. Tổng kết</h2>
+    <ul>
+      <li>Hàm giúp tổ chức mã nguồn rõ ràng và dễ tái sử dụng.</li>
+      <li>Arrow function thích hợp cho các tác vụ ngắn gọn, không cần <code>this</code>.</li>
+      <li>Callback và đệ quy là hai khái niệm nâng cao quan trọng cần nắm vững.</li>
+    </ul>
+
+    <div class="footer-text">
+      <p>© 2025 - Viết bởi <strong>Văn Huy</strong>. Cùng nhau làm chủ JavaScript!</p>
+    </div>
+  </div>
+</body>
+</html>

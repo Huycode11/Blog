@@ -1,0 +1,119 @@
+/* ------------------------------
+   CSS cho các bài viết JavaScript
+   Tác giả: Văn Huy
+------------------------------ */
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafc;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Tiêu đề */
+h1 {
+  color: #222;
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #007bff;
+  border-left: 5px solid #007bff;
+  padding-left: 10px;
+  margin-top: 30px;
+  font-size: 1.4em;
+}
+
+h3 {
+  color: #444;
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+/* Nút quay lại */
+.back-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #007bff;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+.back-btn:hover {
+  background: #0056b3;
+}
+
+/* Gạch phân cách */
+.divider {
+  border-bottom: 2px solid #eee;
+  margin: 20px 0;
+}
+
+/* Vùng mã code */
+.code-box {
+  background: #f4f6f8;
+  border-left: 4px solid #007bff;
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 15px 0;
+}
+.code-box pre {
+  margin: 0;
+  font-size: 0.95em;
+  font-family: Consolas, monospace;
+  color: #222;
+}
+
+/* Danh sách */
+ul {
+  background: #f8faff;
+  padding: 15px 25px;
+  border-radius: 8px;
+}
+ul li {
+  margin: 8px 0;
+}
+
+/* Chân bài viết */
+.footer-text {
+  text-align: center;
+  color: #666;
+  font-size: 0.95em;
+  margin-top: 30px;
+}
+
+/* Hiệu ứng nhẹ */
+.container {
+  animation: fadeIn 0.8s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive cho mobile */
+@media (max-width: 600px) {
+  .container {
+    padding: 25px 20px;
+    margin: 20px;
+  }
+  h1 {
+    font-size: 1.6em;
+  }
+}

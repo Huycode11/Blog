@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Cơ Bản - Biến, Kiểu Dữ Liệu và Toán Tử</title>
+  <link rel="stylesheet" href="../assets/css/post8.css">
+</head>
+<body>
+
+  <div class="container">
+    <a href="../post.html" class="back-btn">← Quay lại</a>
+    <h1>JavaScript Cơ Bản – Biến, Kiểu Dữ Liệu và Toán Tử</h1>
+
+    <div class="divider"></div>
+
+    <p>
+      Trong quá trình học JavaScript, một trong những phần quan trọng nhất chính là **biến (variables)**, **kiểu dữ liệu (data types)** và **toán tử (operators)**. Đây là nền tảng để bạn hiểu cách ngôn ngữ này xử lý dữ liệu và logic bên trong chương trình.
+    </p>
+
+    <h2>1. Khai báo biến trong JavaScript</h2>
+    <p>
+      JavaScript cho phép khai báo biến bằng 3 từ khóa: <code>var</code>, <code>let</code> và <code>const</code>.  
+      - <strong>var</strong>: được sử dụng từ các phiên bản cũ, phạm vi là function-scope.  
+      - <strong>let</strong>: được giới thiệu trong ES6, phạm vi block-scope, dùng phổ biến hiện nay.  
+      - <strong>const</strong>: khai báo hằng số – giá trị không thể thay đổi sau khi gán.
+    </p>
+
+    <div class="code-box">
+      <pre><code>// Ví dụ:
+var name = "Huy";
+let age = 20;
+const country = "Việt Nam";
+
+console.log(name, age, country);</code></pre>
+    </div>
+
+    <h2>2. Các kiểu dữ liệu cơ bản trong JavaScript</h2>
+    <p>
+      JavaScript là ngôn ngữ **dynamic type**, nghĩa là không cần khai báo kiểu dữ liệu trước.  
+      Dưới đây là các kiểu dữ liệu phổ biến:
+    </p>
+
+    <ul>
+      <li><strong>String</strong>: chuỗi ký tự, ví dụ: <code>"Hello"</code></li>
+      <li><strong>Number</strong>: số, có thể là số nguyên hoặc số thực.</li>
+      <li><strong>Boolean</strong>: giá trị logic (true hoặc false).</li>
+      <li><strong>Null</strong>: không có giá trị.</li>
+      <li><strong>Undefined</strong>: biến chưa được gán giá trị.</li>
+      <li><strong>Object</strong>: kiểu dữ liệu phức tạp gồm nhiều thuộc tính.</li>
+    </ul>
+
+    <div class="code-box">
+      <pre><code>// Ví dụ về kiểu dữ liệu:
+let name = "Van Huy";
+let age = 21;
+let isStudent = true;
+let address = null;
+let score;
+let person = {name: "Huy", age: 21};
+
+console.log(typeof name);
+console.log(typeof age);
+console.log(typeof isStudent);
+console.log(typeof address);
+console.log(typeof score);
+console.log(typeof person);</code></pre>
+    </div>
+
+    <h2>3. Toán tử trong JavaScript</h2>
+    <p>
+      JavaScript cung cấp nhiều loại toán tử để thực hiện các phép tính và xử lý logic trong chương trình. Dưới đây là một số nhóm toán tử thường dùng:
+    </p>
+
+    <h3>3.1 Toán tử số học (Arithmetic Operators)</h3>
+    <div class="code-box">
+      <pre><code>let a = 10, b = 3;
+console.log(a + b);  // 13
+console.log(a - b);  // 7
+console.log(a * b);  // 30
+console.log(a / b);  // 3.3333
+console.log(a % b);  // 1
+console.log(a ** b); // 1000</code></pre>
+    </div>
+
+    <h3>3.2 Toán tử so sánh (Comparison Operators)</h3>
+    <div class="code-box">
+      <pre><code>let x = 5, y = "5";
+
+console.log(x == y);   // true (so sánh giá trị)
+console.log(x === y);  // false (so sánh cả kiểu)
+console.log(x != y);   // false
+console.log(x !== y);  // true
+console.log(x > 3);    // true
+console.log(x <= 5);   // true</code></pre>
+    </div>
+
+    <h3>3.3 Toán tử logic (Logical Operators)</h3>
+    <div class="code-box">
+      <pre><code>let isAdult = true;
+let hasTicket = false;
+
+console.log(isAdult && hasTicket); // false
+console.log(isAdult || hasTicket); // true
+console.log(!isAdult);             // false</code></pre>
+    </div>
+
+    <h2>4. Kết luận</h2>
+    <p>
+      Việc nắm vững khái niệm về biến, kiểu dữ liệu và toán tử là điều kiện cần để bạn có thể lập trình JavaScript hiệu quả. Ở bài tiếp theo, chúng ta sẽ tìm hiểu về **cấu trúc điều kiện và vòng lặp**, giúp kiểm soát luồng thực thi của chương trình.
+    </p>
+
+    <div class="divider"></div>
+    <p class="footer-text">📘 Bài viết thuộc series “Học JavaScript từ Cơ Bản đến Nâng Cao” – Văn Huy Blog</p>
+
+  </div>
+</body>
+</html>

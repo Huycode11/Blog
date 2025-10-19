@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Multithreading - Văn Huy</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/post5.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <header class="header">
+    <button class="back-btn" onclick="window.location.href='../post.html'">
+      <i class="fa-solid fa-arrow-left"></i> Quay lại danh sách bài viết
+    </button>
+    <h1>Java Multithreading – Lập trình đa luồng trong Java</h1>
+    <p class="subtitle">Tác giả: Văn Huy | Ngày đăng: 20/10/2025</p>
+  </header>
+
+  <section class="content">
+    <h2>1. Giới thiệu về Multithreading</h2>
+    <p>
+      <strong>Multithreading</strong> là một trong những tính năng mạnh mẽ của Java, 
+      cho phép nhiều phần của chương trình (threads) chạy song song, 
+      giúp tăng hiệu suất và tận dụng tối đa tài nguyên CPU.
+    </p>
+    <p>
+      Khi lập trình đa luồng, ta có thể thực hiện nhiều tác vụ cùng lúc như tải dữ liệu, 
+      xử lý logic nền, hoặc hiển thị giao diện mà không làm “treo” chương trình chính.
+    </p>
+
+    <h2>2. Tạo Thread trong Java</h2>
+    <p>Có hai cách phổ biến để tạo luồng trong Java:</p>
+    <ul>
+      <li>Kế thừa lớp <code>Thread</code>.</li>
+      <li>Triển khai giao diện <code>Runnable</code>.</li>
+    </ul>
+
+    <h3>Ví dụ 1 – Kế thừa lớp Thread</h3>
+    <pre><code class="language-java">
+class MyThread extends Thread {
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Luồng con đang chạy: " + i);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                System.out.println(e);
+            }
+        }
+    }
+}
+
+public class DemoThread {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        t1.start(); // bắt đầu luồng
+        System.out.println("Luồng chính kết thúc");
+    }
+}
+    </code></pre>
+
+    <h3>Ví dụ 2 – Triển khai Runnable</h3>
+    <pre><code class="language-java">
+class MyRunnable implements Runnable {
+    public void run() {
+        for (int i = 1; i <= 3; i++) {
+            System.out.println("Đang chạy Runnable: " + i);
+        }
+    }
+}
+
+public class RunnableDemo {
+    public static void main(String[] args) {
+        Thread t = new Thread(new MyRunnable());
+        t.start();
+    }
+}
+    </code></pre>
+
+    <h2>3. Các phương thức quan trọng của Thread</h2>
+    <table class="table">
+      <tr><th>Phương thức</th><th>Chức năng</th></tr>
+      <tr><td><code>start()</code></td><td>Bắt đầu thực thi luồng.</td></tr>
+      <tr><td><code>run()</code></td><td>Chứa logic thực thi của luồng.</td></tr>
+      <tr><td><code>sleep(ms)</code></td><td>Tạm dừng luồng trong khoảng thời gian nhất định.</td></tr>
+      <tr><td><code>join()</code></td><td>Chờ cho luồng kết thúc trước khi tiếp tục luồng khác.</td></tr>
+      <tr><td><code>setPriority()</code></td><td>Thiết lập độ ưu tiên cho luồng.</td></tr>
+    </table>
+
+    <h2>4. Đồng bộ hóa luồng (Synchronization)</h2>
+    <p>
+      Khi nhiều luồng cùng truy cập và thay đổi một tài nguyên chung, 
+      ta có thể gặp lỗi “race condition”. Để tránh điều này, Java cung cấp từ khóa 
+      <code>synchronized</code> để đảm bảo chỉ có một luồng truy cập vào tài nguyên tại một thời điểm.
+    </p>
+
+    <pre><code class="language-java">
+class Counter {
+    private int count = 0;
+
+    public synchronized void increment() {
+        count++;
+    }
+
+    public int getCount() {
+        return count;
+    }
+}
+
+public class SyncDemo {
+    public static void main(String[] args) throws InterruptedException {
+        Counter c = new Counter();
+
+        Thread t1 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) c.increment();
+        });
+        Thread t2 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) c.increment();
+        });
+
+        t1.start(); t2.start();
+        t1.join(); t2.join();
+
+        System.out.println("Kết quả cuối cùng: " + c.getCount());
+    }
+}
+    </code></pre>
+
+    <h2>5. Ưu và nhược điểm của Multithreading</h2>
+    <p><strong>Ưu điểm:</strong></p>
+    <ul>
+      <li>Tận dụng CPU hiệu quả hơn.</li>
+      <li>Chương trình phản hồi nhanh hơn (responsive).</li>
+      <li>Có thể xử lý nhiều tác vụ đồng thời.</li>
+    </ul>
+
+    <p><strong>Nhược điểm:</strong></p>
+    <ul>
+      <li>Khó gỡ lỗi và kiểm thử.</li>
+      <li>Dễ gặp lỗi race condition nếu không đồng bộ đúng cách.</li>
+      <li>Tốn tài nguyên nếu tạo quá nhiều luồng.</li>
+    </ul>
+
+    <h2>6. Kết luận</h2>
+    <p>
+      Lập trình đa luồng là một kỹ năng nâng cao trong Java, giúp ứng dụng hoạt động hiệu quả, 
+      đặc biệt là trong môi trường đa nhân CPU. Tuy nhiên, người lập trình cần nắm vững 
+      cách đồng bộ hóa và tránh các lỗi về luồng để đảm bảo tính ổn định của chương trình.
+    </p>
+
+    <button class="top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+      ⬆ Về đầu trang
+    </button>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Văn Huy | <a href="../post.html">Quay lại danh sách bài viết</a></p>
+  </footer>
+</body>
+</html>
