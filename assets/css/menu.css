@@ -4,12 +4,14 @@
   justify-content: space-between !important;
   gap: 20px;
   padding: 18px 50px !important;
-  background: rgba(0,0,0,0.0);
+  background: rgba(255, 255, 255, 0.25); /* nền mờ nhẹ cho toàn thanh */
+  backdrop-filter: blur(6px); /* làm mờ nền phía sau */
   position: fixed !important;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 9999;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
 }
 
 /* Logo bên trái */
@@ -21,9 +23,12 @@
   color: #ff6b6b;
   text-transform: uppercase;
   margin: 0;
-  padding: 0;
+  padding: 6px 14px;
   cursor: pointer;
-  text-shadow: 0 0 8px rgba(255,107,107,0.25);
+  background-color: rgba(255, 255, 255, 0.8); /* nền trắng mờ */
+  border-radius: 10px; /* bo góc nhẹ */
+  backdrop-filter: blur(4px); /* làm mờ nền phía sau nhẹ */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* đổ bóng nhẹ cho nổi */
 }
 
 /* Menu */
